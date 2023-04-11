@@ -31,9 +31,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class           instance    title       tags mask     isfloating   monitor */
+//	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
+	{ "Google-chrome",  NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "QQ",             NULL,       NULL,       1 << 8,       1,           -1 },           
 };
 
 /* layout(s) */
@@ -62,7 +63,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/launchers/type-4/style-2.rasi", NULL };
+//static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/launchers/type-4/style-2.rasi", NULL };
+static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };

@@ -31,16 +31,17 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class           instance    title       tags mask     isfloating   monitor */
+//	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
+	{ "Google-chrome",  NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "QQ",             NULL,       NULL,       1 << 8,       1,           -1 },           
 };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -62,7 +63,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/launchers/type-4/style-2.rasi", NULL };
+//static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/launchers/type-4/style-2.rasi", NULL };
+static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
