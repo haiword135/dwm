@@ -34,7 +34,10 @@ static const Rule rules[] = {
 	/* class           instance    title       tags mask     isfloating   monitor */
 //	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
 	{ "Google-chrome",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "QQ",             NULL,       NULL,       1 << 8,       1,           -1 },           
+	{ "QQ",             NULL,       NULL,       1 << 8,       1,           -1 },
+	{ "jetbrains-goland", NULL,     NULL,       1 << 2,       1,           -1 }, 
+	{ "jetbrains-toolbox", NULL,    NULL,       1 << 2,       1,           -1 },           
+	{ "TelegramDesktop",   NULL,    NULL,       1 << 7,       1,           -1 },
 };
 
 /* layout(s) */
@@ -64,7 +67,7 @@ static const Layout layouts[] = {
 
 /* commands */
 //static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/launchers/type-4/style-2.rasi", NULL };
-static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
+static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme","/home/Hua/.config/rofi/rofi.rasi",  NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
