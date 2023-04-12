@@ -11,7 +11,7 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int focusonwheel       = 0;
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:style=medium:size=13", "monospace:size=13" };
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:style=medium:size=13", "monospace:size=13"};
 static const char col_gray1[]       = "#191919";
 static const char col_gray2[]       = "#111111";
 static const char col_gray3[]       = "#bbbbbb";
@@ -38,6 +38,7 @@ static const Rule rules[] = {
 	{ "jetbrains-goland", NULL,     NULL,       1 << 2,       1,           -1 }, 
 	{ "jetbrains-toolbox", NULL,    NULL,       1 << 2,       1,           -1 },           
 	{ "TelegramDesktop",   NULL,    NULL,       1 << 7,       1,           -1 },
+	{ "Code",               NULL,   NULL,       1 << 3,       0,           -1 },
 };
 
 /* layout(s) */
@@ -64,6 +65,8 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+
+#define STATUSBAR "dwmblocks"
 
 /* commands */
 //static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/launchers/type-4/style-2.rasi", NULL };
@@ -120,7 +123,9 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
+	{ ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
+	{ ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
