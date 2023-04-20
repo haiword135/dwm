@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	{ "jetbrains-toolbox", NULL,    NULL,       1 << 2,       1,           -1 },           
 	{ "TelegramDesktop",   NULL,    NULL,       1 << 7,       1,           -1 },
 	{ "Code",               NULL,   NULL,       1 << 3,       0,           -1 },
+	{ "Pavucontrol",    NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -54,6 +55,9 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ "###",      grid },
+
+	{ "|M|",      centeredmaster },
+	{ ">M>",      centeredfloatingmaster },
 };
 
 /* key definitions */
@@ -72,7 +76,7 @@ static const Layout layouts[] = {
 /* commands */
 //static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/launchers/type-4/style-2.rasi", NULL };
 static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme","/home/Hua/.config/rofi/rofi.rasi",  NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "wezterm", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
@@ -93,10 +97,14 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY,                       XK_o,      setlayout,      {.v = &layouts[5]} },
+
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
