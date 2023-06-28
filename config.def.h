@@ -41,6 +41,8 @@ static const Rule rules[] = {
 	{ "TelegramDesktop",   NULL,    NULL,       1 << 7,       1,           -1 },
 	{ "Code",               NULL,   NULL,       1 << 3,       0,           -1 },
 	{ "Pavucontrol",    NULL,       NULL,       0,            1,           -1 },
+	{ "Thunar",         NULL,       NULL,       0,            1,           -1 },
+
 };
 
 /* layout(s) */
@@ -61,7 +63,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
