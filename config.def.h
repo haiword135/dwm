@@ -42,6 +42,7 @@ static const Rule rules[] = {
 	{ "Code",               NULL,   NULL,       1 << 3,       0,           -1 },
 	{ "Pavucontrol",    NULL,       NULL,       0,            1,           -1 },
 	{ "Thunar",         NULL,       NULL,       0,            1,           -1 },
+  { "steam",          NULL,       NULL,       0,            1,           -1 },
 
 };
 
